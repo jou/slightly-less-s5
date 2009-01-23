@@ -1,0 +1,36 @@
+!!! Strict
+%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+  %head
+    %title
+      [[PRESENTATION TITLE]]
+      
+    -# metadata
+    %meta{ :name => "generator", :content => "S5" }/
+    %meta{ :name => "version", :content => "S5 1.1" }/
+    %meta{ :name => "author", :content => "YOU" }/
+    %meta{ :name => "company", :content => "YOUR SERIOUS BUSINESS" }/
+    -# configuration parameters
+    %meta{ :name => "defaultView", :content => "slideshow" }/
+    %meta{ :name => "controlVis", :content => "hidden" }/
+    -# style sheet links
+    %link#slideProj{ :href => "ui/default/slides.css", :rel => "stylesheet", :media => "projection", :type => "text/css" }/
+    %link#outlineStyle{ :href => "ui/default/outline.css", :rel => "stylesheet", :media => "screen", :type => "text/css" }/
+    %link#slidePrint{ :href => "ui/default/print.css", :rel => "stylesheet", :media => "print", :type => "text/css" }/
+    %link#operaFix{ :href => "ui/default/opera.css", :rel => "stylesheet", :media => "projection", :type => "text/css" }/
+    -# S5 JS
+    %script{ :src => "ui/default/slides.js", :type => "text/javascript" }/
+    -# Code highlight CSS
+    %link{:href => "uv/css/#{UV_THEME}.css", :rel => 'stylesheet', :media => 'all', :type => 'text/css'}/
+  %body
+    .layout
+      #controls
+      #currentSlide
+      
+      #header
+      #footer
+        %h1
+          [[FIRST FOOTER LINE]]
+        %h2
+          [[SECOND FOOTER LINE]]
+    .presentation
+      ~ yield
