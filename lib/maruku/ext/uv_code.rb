@@ -20,9 +20,8 @@ module MaRuKu; module Ext;
           end
           
           highlighted_source = Uv.parse(lines.join("\n"), "xhtml", lang, true, UV_THEME)
-          # highlighted_source.sub!(/^<pre[^>]+>/m, '\0<[CDATA[').sub!(/<\/pre>$/m, ']]>\0')
           
-          context.push doc.md_html(highlighted_source)
+          context.push doc.md_html("<div class='uv_code'>#{highlighted_source}</div>")
           
           return true
         }
